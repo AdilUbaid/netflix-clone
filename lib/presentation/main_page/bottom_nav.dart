@@ -20,7 +20,7 @@ class BottomNavigationWidgets extends StatelessWidget {
             backgroundColor: Colors.black,
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.grey,
-            selectedIconTheme: IconThemeData(color: Colors.white),
+            selectedIconTheme: const IconThemeData(color: Colors.white),
             unselectedIconTheme: const IconThemeData(color: Colors.grey),
             // ignore: prefer_const_literals_to_create_immutables
             items: [

@@ -26,7 +26,7 @@ class ScreenDownloads extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: ListView.separated(
               itemBuilder: ((context, index) => _widgetList[index]),
-              separatorBuilder: (context, index) => SizedBox(
+              separatorBuilder: (context, index) => const SizedBox(
                     height: 25,
                   ),
               itemCount: _widgetList.length),

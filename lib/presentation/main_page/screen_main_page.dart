@@ -10,10 +10,10 @@ import '../downloads/widgets/screen_downloads.dart';
 class ScreenaMainPage extends StatelessWidget {
   ScreenaMainPage({super.key});
   final _pages = [
-    ScreenHome(),
-    ScreenNewAndHot(),
-    ScreenFastLaugh(),
-    ScreenSearch(),
+    const ScreenHome(),
+    const ScreenNewAndHot(),
+    const ScreenFastLaugh(),
+    const ScreenSearch(),
     ScreenDownloads()
   ];
 
@@ -28,7 +28,7 @@ class ScreenaMainPage extends StatelessWidget {
           },
         ),
       ),
-      bottomNavigationBar: BottomNavigationWidgets(),
+      bottomNavigationBar: const BottomNavigationWidgets(),
     );
   }
 }
