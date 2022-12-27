@@ -1,30 +1,22 @@
 import 'package:flutter/cupertino.dart';
 
-const kWidth = SizedBox(
-  width: 10,
-);
-const kHeight = SizedBox(
-  height: 10,
-);
-const kHeight20 = SizedBox(
-  height: 20,
-);
-const kHeight50 = SizedBox(
-  height: 50,
-);
+const kwidth = SizedBox(width: 10);
+const kheight = SizedBox(height: 10);
+const kheight20 = SizedBox(height: 20);
+const khHeight50 = SizedBox(height: 50);
 
-///Border radius
-
-final BorderRadius kRadius10 = BorderRadius.circular(10);
+//Border Radius
+final BorderRadius kRadius = BorderRadius.circular(10);
 final BorderRadius kRadius30 = BorderRadius.circular(30);
 
-//Images
-const kMainImage =
-    'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gZleGu1MQVBArH2dlpZ9CGi0hhy.jpg';
-const hotAndNewTempImage =
-    'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/1rO4xoCo4Z5WubK0OwdVll3DPYo.jpg';
-const hotAndNewTempImage2 =
-    'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/eqhKMZTLcieAvoH6CBqknTTfNby.jpg';
-//text style
-TextStyle kHOmeTitleText =
-    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
+//inage
+const imageAppendUrl = 'https://image.tmdb.org/t/p/w500';
+const String mainImage =
+    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7l3war94J4tRyWUiLAGokr3ViF2.jpg";
+const String newAndHotImage =
+    "https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/jJhuJChqqZcR20EUrG5LUPZCi5w.jpg";
+const String everyoneImage =
+    "https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/bKxiLRPVWe2nZXCzt6JPr5HNWYm.jpg";
+//TextStyle
+const TextStyle kHomeStyle =
+    TextStyle(fontSize: 14, fontWeight: FontWeight.bold);

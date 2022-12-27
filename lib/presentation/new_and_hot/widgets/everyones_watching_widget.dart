@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/core/constants.dart';
+import 'package:netflix/presentation/home_page/widgets/custon_button_widget.dart';
+import 'package:netflix/presentation/new_and_hot/widgets/video_widget.dart';
 
 import '../../../core/colors/colors.dart';
-import '../../../core/constants.dart';
-import '../../home/widgets/custom_button_widget.dart';
-import '../../widgets/video_widgets.dart';
 
-class EveryonesWatchigWidget extends StatelessWidget {
-  const EveryonesWatchigWidget({
+class EveronesWatchingWidget extends StatelessWidget {
+  final String postePath;
+  final String movieName;
+  final String description;
+  const EveronesWatchingWidget({
     Key? key,
+    required this.postePath,
+    required this.movieName,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -15,42 +21,53 @@ class EveryonesWatchigWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        kHeight,
-        const Text(
-          "Friends",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        kheight,
+        Text(
+          movieName,
+          style: const TextStyle(
+              fontSize: 20, color: kwhitecolor, fontWeight: FontWeight.bold),
         ),
-        kHeight,
-        const Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum dignissim velit vel blandit. Integer a condimentum augue. In convallis purus sed leo dignissim faucibus.",
-          style: TextStyle(fontSize: 15, color: kGreyColor),
+        kheight,
+        Text(
+          description,
+          maxLines: 4,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+            fontSize: 16,
+            color: kGreyColor,
+          ),
         ),
-        kHeight50,
-        const VideoWidget(),
-        kHeight,
-        Row(mainAxisAlignment: MainAxisAlignment.end, children: const [
-          CustomButtonWidget(
-            icon: Icons.send,
-            title: "Share",
-            iconSize: 26,
-            textSize: 14,
-          ),
-          kWidth,
-          CustomButtonWidget(
-            icon: Icons.add,
-            title: "My list",
-            iconSize: 26,
-            textSize: 14,
-          ),
-          kWidth,
-          CustomButtonWidget(
-            icon: Icons.play_arrow,
-            title: "Play",
-            iconSize: 26,
-            textSize: 14,
-          ),
-          kWidth,
-        ])
+        khHeight50,
+        VideoWidget(
+          url: postePath,
+        ),
+        kheight,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: const [
+            CustomButtom(
+              icon: Icons.share,
+              title: "Share",
+              iconSize: 25,
+              fontSize: 16,
+            ),
+            kwidth,
+            CustomButtom(
+              icon: Icons.add,
+              title: "My List",
+              iconSize: 25,
+              fontSize: 16,
+            ),
+            kwidth,
+            CustomButtom(
+              icon: Icons.play_arrow_rounded,
+              title: "Play",
+              iconSize: 25,
+              fontSize: 16,
+            ),
+            kwidth,
+          ],
+        )
       ],
     );
   }

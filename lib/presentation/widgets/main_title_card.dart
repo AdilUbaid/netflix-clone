@@ -1,32 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/presentation/widgets/main_card.dart';
+import 'package:netflix/presentation/widgets/main_title.dart';
 
-import 'main_card.dart';
-import 'main_title.dart';
+import '../../core/constants.dart';
 
-class MainTitleCars extends StatelessWidget {
+class MainTitleCard extends StatelessWidget {
+  const MainTitleCard({
+    Key? key,
+    required this.title,
+    required this.posterList,
+  }) : super(key: key);
   final String title;
-
-  const MainTitleCars({Key? key, required this.title}) : super(key: key);
+  final List<String> posterList;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // ignore: prefer_const_literals_to_create_immutables
       children: [
-        MainTitle(
-          title: title,
-        ),
+        TitleWidget(title: title),
+        kheight,
         LimitedBox(
-          maxHeight: 250,
+          maxHeight: 200,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: List.generate(
-              10,
-              (index) => const MainCard(),
+              posterList.length,
+              (index) => MainCard(imageUrl: posterList[index]),
             ),
           ),
         ),
+        kheight
       ],
     );
   }
